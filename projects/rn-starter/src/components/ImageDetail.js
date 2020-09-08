@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, Image, View } from 'react-native';
 
 const ImageDetail = (props) => {
-  console.log('props: ', props);
   return (
     <View>
       <Image source={props.source} />

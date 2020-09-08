@@ -10,7 +10,6 @@ const randomRgb = () => {
 
 const ColorScreen = () => {
   const [colors, setColors] = useState([]);
-  console.log('colors: ', colors);
   return (
     <View>
       <Button title="Add a Color" onPress={() => setColors([...colors, randomRgb()])} />
