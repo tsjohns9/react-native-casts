@@ -13,16 +13,15 @@ app.use(bodyParser.json());
 app.use(authRoutes);
 app.use(trackRoutes);
 
-const mongoUri =
-  'mongodb+srv://admin:passwordpassword@cluster0-8fzga.mongodb.net/test?retryWrites=true&w=majority';
+const mongoUri = 'mongodb://localhost:27017/tracks';
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 mongoose.connection.on('connected', () => {
   console.log('Connected to mongo instance');
 });
-mongoose.connection.on('error', err => {
+mongoose.connection.on('error', (err) => {
   console.error('Error connecting to mongo', err);
 });
 
