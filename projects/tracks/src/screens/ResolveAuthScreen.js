@@ -1,14 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useContext } from 'react';
+import { Context as AuthContext } from '../context/AuthContext';
 
 const ResolveAuthScreen = () => {
-  return (
-    <View>
-      <Text>Resolve Auth Screen</Text>
-    </View>
-  );
+  const { tryLocalSignin } = useContext(AuthContext);
+
+  useEffect(() => {
+    tryLocalSignin();
+  }, []);
+
+  return null;
 };
 
 export default ResolveAuthScreen;
-
-const styles = StyleSheet.create({});
